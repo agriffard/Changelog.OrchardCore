@@ -1,0 +1,50 @@
+﻿@page "/"
+@using System.Text.RegularExpressions
+
+<h1>Changelog links</h1>
+<div class="lead">
+    1) Install <a href="https://github.com/cfpb/github-changelog">https://github.com/cfpb/github-changelog</a> <br />
+    2) Execute <code>changelog</code> for a owner, a repo between 2 tagged versions:<br />
+<pre><code>changelog orchardcms orchardcore 1.0.0-rc1 1.0.0-rc2</code></pre>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <div class="form-group">
+            <label>Changelog:</label>
+            <textarea id="Source" class="form-control" @bind="Source" rows="20"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Repository Url:</label>
+            <input id="RepositoryUrl" class="form-control" @bind="RepositoryUrl" />
+            <small>The GitHub repository url.</small>
+        </div>
+        <div class=" float-right">
+            <button class="btn btn-primary" @onclick="Generate">Replace # by GitHub repository url format</button>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="form-group">
+            <label>Result:</label>
+            <textarea id="Result" class="form-control" @bind="Result" rows="20"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Url format:</label>
+            <input id="UrlFormat" class="form-control" @bind="UrlFormat" />
+            <small>The url format to replace each #1234: {0} = #1234, {1} = GitHub repository url, {2} = 1234</small>
+        </div>
+    </div>
+</div>
+
+@code {
+    private string Source = "- PR Title Example #1234";
+    private string RepositoryUrl = "https://github.com/OrchardCMS/OrchardCore";
+    private string UrlFormat = "[{0}]({1}/pull/{2})";
+    private string Result = "";
+
+    private void Generate()
+    {
+        Result = Regex.Replace(Source, @"#[0-9]+", m => string.Format(UrlFormat, m.Groups[0].Value, RepositoryUrl, m.Groups[0].Value.Replace("#", "")));
+    }
+}
+

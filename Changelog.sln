@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30028.174
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Changelog", "Changelog.csproj", "{35583743-8BC9-4B91-BD05-44F2B44A8E1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Changelog", "src\Changelog\Changelog.csproj", "{586ED59A-5627-4D73-AC66-B97B758C9DA5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9CC3868-8D75-4575-A056-90C5614250A4}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +16,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{35583743-8BC9-4B91-BD05-44F2B44A8E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35583743-8BC9-4B91-BD05-44F2B44A8E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35583743-8BC9-4B91-BD05-44F2B44A8E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35583743-8BC9-4B91-BD05-44F2B44A8E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{586ED59A-5627-4D73-AC66-B97B758C9DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{586ED59A-5627-4D73-AC66-B97B758C9DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{586ED59A-5627-4D73-AC66-B97B758C9DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{586ED59A-5627-4D73-AC66-B97B758C9DA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
